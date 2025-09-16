@@ -17,21 +17,26 @@ async function main() {
 
 app.get("/" , (req,res)=>{
     res.send("it is root  ");
-})
+});
 
 
-app.get("/testListing", async(req,res)=>{
-    let sampleListing = new Listing({
-        title: "My New Villa",
-        description: "By the beach",
-        price:1200,
-        location:"Calangute,Gos",
-        country:"India",
-    });
-    await sampleListing.save();
-    console.log("sample was saved");
-    res.send("sucessful testing");
-})
+app.get("/listings",async(req,res)=>{
+   const allListings = await Listing.find({});
+   res.render("index.js",{allListings} )
+});
+
+// app.get("/testListing", async(req,res)=>{
+//     let sampleListing = new Listing({
+//         title: "My New Villa",
+//         description: "By the beach",
+//         price:1200,
+//         location:"Calangute,Gos",
+//         country:"India",
+//     });
+//     await sampleListing.save();
+//     console.log("sample was saved");
+//     res.send("sucessful testing");
+// })
 
 app.listen(8080,()=>{
     console.log("server is listening to port 8080");
