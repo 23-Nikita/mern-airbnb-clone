@@ -1,5 +1,6 @@
 const Listing = require("./models/listing")
 const Review = require("./models/review")
+const path = require("path"); 
 const ExpressError= require("./utils/ExpressError.js");
 const {listingSchema, reviewSchema} = require(path.join(__dirname, "schema.js"));
 
