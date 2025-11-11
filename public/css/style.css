@@ -69,9 +69,12 @@ body{
 
 }
 
+.listing-row {
+   padding: 0 40px !important;
+}
 
 .card-img-top {
-    border-radius: 1 rem;
+    border-radius: 1rem;
     width:100% !important;
     object-fit: cover !important;
 }
@@ -131,4 +134,17 @@ body{
 .show-card{
     padding-left:0;
     padding-right: 0;
+}
+
+/*home page*/
+ #filters{
+      margin-top: 1rem;
+    }
+
+
+/*MAP*/
+
+#map {
+   height:400px;
+   width: 100%;
 }
